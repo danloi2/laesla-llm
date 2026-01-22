@@ -1,0 +1,14 @@
+name: latespy
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - pytorch
+  - pytorch-cuda
+  - torchaudio
+  - python=3.11
+  - torchvision
+  - sentencepiece
+  - transformers
+  - cookiecutter
+prefix: /home/danloi/miniconda3/envs/latespy

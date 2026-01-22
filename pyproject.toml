@@ -1,0 +1,60 @@
+[project]
+name = "python-lates"
+version = "1.0.0"
+description = "Python Lates"
+readme = "README.md"
+authors = [
+  {name = "Daniel Losada", email = "daniel.losada@ehu.eus"}
+]
+maintainers = [
+  {name = "Daniel Losada", email = "daniel.losada@ehu.eus"}
+]
+classifiers = [
+    # TODO
+]
+license = {text = "MIT"}
+dependencies = [
+  "typer",
+  "transformers",
+  "sentencepiece",
+  "torch"
+]
+requires-python = ">= 3.10"
+
+[project.optional-dependencies]
+test = [
+    "coverage",  # testing
+    "pytest",  # testing
+    "ruff",  # linting
+    "ty", # checking types
+    "ipdb", # debugging
+]
+
+[project.urls]
+bugs = "https://github.com/danloi2/python_lates/issues"
+changelog = "https://github.com/danloi2/python_lates/blob/master/changelog.md"
+homepage = "https://github.com/danloi2/python_lates"
+
+[project.scripts]
+python_lates = "python_lates.cli:app"
+
+[tool.ty]
+# All rules are enabled as "error" by default; no need to specify unless overriding.
+# Example override: relax a rule for the entire project (uncomment if needed).
+# rules.TY015 = "warn"  # For invalid-argument-type, warn instead of error.
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # Pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "UP",  # pyupgrade
+]
+
+[tool.uv]
+package = true
